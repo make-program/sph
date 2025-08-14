@@ -1,3 +1,9 @@
+<div *ngIf="!profile" class="under-construction">
+    <p>New website under construction.</p>
+</div>
+
+<div *ngIf="profile" class="profile-container">
+
 <!-- Loading and Error States -->
 <div *ngIf="loading" class="loading-container">
     <p>Loading profile...</p>
@@ -67,3 +73,4 @@
     <p>&nbsp;</p>
 
     <p class="bio" *ngIf="getProfileBio()">{{ getProfileBio() }}</p>
+</div>

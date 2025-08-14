@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
         this.loadProfile(username);
       } else {
         // Load default profile for routes without username
-        this.loadProfile('Hongmei-Zhang');
+        this.profile = null;
       }
     });
   }
