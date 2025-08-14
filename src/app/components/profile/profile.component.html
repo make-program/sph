@@ -1,0 +1,69 @@
+<!-- Loading and Error States -->
+<div *ngIf="loading" class="loading-container">
+    <p>Loading profile...</p>
+</div>
+
+<div *ngIf="error" class="error-container">
+    <h2>Error</h2>
+    <p>{{ error }}</p>
+</div>
+
+<!-- Profile Content (only show when profile is loaded) -->
+<div *ngIf="profile && !loading && !error">
+    <!-- hero image with text on top of image, the text is in the center of the image -->
+    <div class="hero-image-container">
+        <img src="https://thedockmaster.org/reaim/wp-content/uploads/bg-blue-jumping-tiger.webp" alt="background" class="background-image" style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="hero-text">
+            <h1>FACULTY PROFILE</h1>
+        </div>
+    </div>
+
+    <div class="responsive-container">
+        <div class="profile-image-container">
+            <img class="profile-image" src="https://thedockmaster.org/reaim/wp-content/uploads/{{getProfileUserName()}}-rec.webp"
+                alt="{{ getProfileName() }} portrait" />
+        </div>
+        <div class="card">
+            <h1>{{ getProfileName() }}{{ getProfileEducation() ? ', ' + getProfileEducation() : '' }}</h1>
+            <h2>{{ getProfileTitle() }}</h2>
+            <h3>{{ getProfileDivision() }}</h3>
+            <div class="info">
+                <div class="info-column">
+                    <p *ngIf="getProfilePhone()">
+                        <img class="icon" src="https://schoolofpublichealth.org/wp-content/uploads/icon-phone.webp"
+                            alt="Phone" /> 
+                        <a href="tel:{{ getProfilePhone() }}">{{ getProfilePhone() }}</a>
+                    </p>
+                    <p *ngIf="getProfileEmail()">
+                        <img class="icon" src="https://schoolofpublichealth.org/wp-content/uploads/icon-email.webp"
+                            alt="Email" /> 
+                        <a href="mailto:{{ getProfileEmail() }}">{{ getProfileEmail() }}</a>
+                    </p>
+                    <p *ngIf="getProfileGoogleScholar()">
+                        <img class="icon" src="https://schoolofpublichealth.org/wp-content/uploads/icon-googlescholar.webp"
+                            alt="Google Scholar" /> 
+                        <a href="{{ getProfileGoogleScholar() }}" target="_blank" rel="noopener">Google Scholar</a>
+                    </p>
+                </div>
+                <div class="info-column">
+                    <p *ngIf="getProfileOffice()">
+                        <img class="icon" src="https://schoolofpublichealth.org/wp-content/uploads/icon-office.webp"
+                            alt="Office" /> {{ getProfileOffice() }}
+                    </p>
+                    <p>
+                        <img class="icon" src="https://schoolofpublichealth.org/wp-content/uploads/icon-appointment.webp"
+                            alt="Appointment" /> By appointment only
+                    </p>
+                    <p *ngIf="getProfileLinkedIn()">
+                        <img class="icon" src="https://schoolofpublichealth.org/wp-content/uploads/icon-cv.webp"
+                            alt="LinkedIn" /> 
+                        <a href="{{ getProfileLinkedIn() }}" target="_blank" rel="noopener">LinkedIn</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <p>&nbsp;</p>
+
+    <p class="bio" *ngIf="getProfileBio()">{{ getProfileBio() }}</p>

@@ -1,0 +1,247 @@
+h1,
+h2,
+h3 {
+    color: white;
+}
+
+.hero-image-container {
+    position: relative;
+}
+
+.hero-text {
+    position: absolute;
+    top: 20%;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: white;
+}
+
+.entry-content-wrap {
+    padding-top: 0px;
+}
+
+.responsive-container {
+    position: relative;
+    margin-bottom: 10px;
+    min-height: 580px;
+    max-width: 1600px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
+}
+
+/* Image block */
+.profile-image-container {
+    max-width: 900px;
+    max-height: 600px;
+    width: 60vw;
+    height: 40vw;
+    display: flex;
+    background: grey;
+    align-content: center;
+}
+
+.profile-image {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+/* Blue card */
+.card {
+    background-color: #003087;
+    color: white;
+    padding: 40px;
+    max-width: 900px;
+    position: absolute;
+    top: 65%;
+    left: 55%;
+    transform: translateY(-50%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Text styles */
+.card h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Info columns */
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.info-column {
+    width: 48%;
+}
+
+.info-column img.icon {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.info-column p {
+    margin: 4px 0;
+}
+
+.info p {
+    font-size: .9rem;
+    margin: 0.3rem 0;
+}
+
+a {
+    color: #d0e4ff;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* Responsive stacking */
+@media (max-width: 768px) {
+    .responsive-container {
+        display: flex;
+        flex-direction: column;
+        position: static;
+    }
+
+    .profile-image-container {
+        width: 90vw;
+        height: 60vw;
+    }
+
+    .card {
+        position: static;
+        transform: none;
+        width: 90vw;
+        margin-top: -10px;
+        z-index: 1;
+    }
+
+    .info-column {
+        width: 100%;
+    }
+
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.google-scholar-link {
+    display: inline-block;
+    background-color: #003087;
+    /* Dark blue */
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 20px 0px 20px 0;
+    /* Rounded right corners */
+    font-family: Arial, sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+.google-scholar-link:hover {
+    background-color: #002060;
+    /* Slightly darker on hover */
+}
+
+.dark-link {
+    color: blue;
+}
+
+.dark-link:hover {
+    color: blue;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+}
+
+.tab-content,
+.tab-content>h2 {
+    color: black;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 1rem;
+    background-color: #003087;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button.active {
+    background-color: #e0e0e0;
+    color: black;
+    font-weight: bold;
+}
+
+.tab-content {
+    padding: 1.5rem;
+    background-color: #e0e0e0;
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .tab-button {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    .tab-content {
+        font-size: 0.95rem;
+    }
+}
+
+.bio {
+    color: rgb(133, 144, 149);
+    font-family: sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    height: 81.5859px;
+    line-height: 27.2px;
+    margin-block-end: 32px;
+    margin-block-start: 0px;
+    margin-bottom: 32px;
+    margin-inline-end: 0px;
+    margin-inline-start: 0px;
+    margin-top: 0px;
+    text-size-adjust: 100%;
+    unicode-bidi: isolate;
+    word-break: break-word;
+}
