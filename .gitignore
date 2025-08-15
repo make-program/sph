@@ -2,6 +2,10 @@
 
 # Compiled output
 # /dist
+/dist/sph2/browser/.htaccess
+/dist/sph2/browser/images
+/public/images
+/public/icons
 /tmp
 /out-tsc
 /bazel-out
