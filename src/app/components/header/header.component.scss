@@ -1,0 +1,231 @@
+// Header Component Styles
+.header {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+}
+
+// Brand Section
+.header-brand {
+  .brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .brand-logo {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    box-shadow: 0 2px 10px rgba(52, 152, 219, 0.3);
+  }
+
+  .logo-icon {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+    letter-spacing: 1px;
+  }
+
+  .brand-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ecf0f1;
+  }
+}
+
+// Navigation Menu
+.header-nav {
+  .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(45deg, #3498db, #2980b9);
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: #3498db;
+      
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Mobile Menu Toggle
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  .hamburger-line {
+    width: 25px;
+    height: 3px;
+    background: #ecf0f1;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 1rem;
+  }
+
+  .header-brand {
+    .brand-text {
+      display: none;
+    }
+  }
+
+  .header-nav {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+    &.nav-open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      gap: 0;
+      padding: 2rem 0;
+    }
+
+    .nav-item {
+      border-bottom: 1px solid rgba(236, 240, 241, 0.1);
+    }
+
+    .nav-link {
+      display: block;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-left: 3px solid transparent;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(52, 152, 219, 0.1);
+        border-left-color: #3498db;
+        padding-left: 2.5rem;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+
+    &.active {
+      .hamburger-line {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(6px, 6px);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(6px, -6px);
+        }
+      }
+    }
+  }
+}
+
+// Tablet adjustments
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header-container {
+    padding: 0 1.5rem;
+  }
+
+  .header-nav {
+    .nav-list {
+      gap: 1.5rem;
+    }
+  }
+}
+
+// Large screen enhancements
+@media (min-width: 1025px) {
+  .header-container {
+    padding: 0 3rem;
+  }
+
+  .header-nav {
+    .nav-link {
+      font-size: 1.05rem;
+    }
+  }
+}
