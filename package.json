@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build; cp htaccess_to_copy dist/sph2/browser/.htaccess",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "push": "git add . && git commit -m 'update' && yarn build && git push"
   },
   "private": true,
   "dependencies": {
