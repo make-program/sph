@@ -4,5 +4,5 @@ import { UnderconstructionComponent } from './components/underconstruction/under
 
 export const routes: Routes = [
   { path: 'profile/:username', component: ProfileComponent },
-  { path: '', component: UnderconstructionComponent, pathMatch: 'full' },
+  { path: '', component: UnderconstructionComponent },
 ];
